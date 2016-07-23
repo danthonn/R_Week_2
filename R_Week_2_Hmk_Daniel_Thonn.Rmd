@@ -1,0 +1,75 @@
+---
+title: "R_Week_2_Hmk_Daniel_Thonn"
+output: html_document
+course: R-Bridge CUNY MSDA program
+reference-factorial: http://www.programiz.com/r-programming/examples/factorial
+---
+
+## Assignment Homework-2: Create a user chooser function
+
+### Step-1: Create a function factn for n Factorial
+
+### Function factn(n)
+#### range: for n >= 0
+
+```{r, echo=TRUE}
+
+factn <- function(n)
+  {factorial <- 1;
+  if(n == 0) {
+    factorial <- 1}
+  else 
+    for(i in 1:n) {
+        factorial <- factorial*i
+    }
+   return(factorial)
+ }
+```
+
+### Testing of Factorial Function factn
+
+```{r, echo=TRUE}
+# Test-1a
+# factn expected answer is 6
+factn(3)
+
+# Test-1b
+# factn expected answer is 720
+factn(6)
+
+
+```
+
+
+### Step-2: Write a user choose Function named choose1(n,r)
+#### Range: for n >= 0, and r >=0
+
+```{r, echo=TRUE}
+choose1 <- function(n,r)
+{cout <- factn(n) / (factn(n-r) * factn(r))
+  return(cout)
+}  
+  
+```  
+  
+### Testing of user function choose1
+
+```{r,echo=TRUE}
+#Test-2a
+# expected answer is 10
+choose1(5,3)
+# R function answer to validate
+choose(5,3)
+
+#Test-2b
+# Custom choose1 expected answer is 70
+choose1(8,4)
+#R function answer to validate
+choose(8,4)
+
+```
+  
+    
+
+
+```
